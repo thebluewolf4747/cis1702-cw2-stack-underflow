@@ -15,9 +15,9 @@ try:
     population = country["population"]
     region = country["region"]
 
-    print(name)
-    print(population)
-    print(region)
+    print("Country:", name)
+    print("Region:", region)
+    print("Population:", population)
 
 except requests.exceptions.RequestException:
     print("Failed to connect to API")
