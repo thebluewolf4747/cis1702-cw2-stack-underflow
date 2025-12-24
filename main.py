@@ -21,3 +21,4 @@ try:
 
 except requests.exceptions.RequestException:
     print("Failed to connect to API")
+
