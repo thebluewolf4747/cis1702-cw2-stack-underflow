@@ -36,17 +36,17 @@ API Data Analyser using the REST countries API to give information on country po
         SET data to null
 
 ## Pseudocode - Parse data function
-FUNCTION parse_data(country)
-    return {
-        country_name,
-        country_official_name,
-        country_population,
-        country_region,
-        country_subregion,
-        country_capital,
-        country_currencies
-    }
+    FUNCTION parse_data(country)
+        return {
+            country_name,
+            country_official_name,
+            country_population,
+            country_region,
+            country_subregion,
+            country_capital,
+            country_currencies
+        }
 
-INPUT country
-country_data = parse_data(country)
+    INPUT country
+    country_data = parse_data(country)
 
