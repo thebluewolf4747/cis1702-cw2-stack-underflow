@@ -11,30 +11,34 @@ def get_country_info(country_name):
 
         data = response.json()
         country = data[0]
-
-        name = country["name"]["common"]
-        population = country["population"]
-        region = country["region"]
-
-        return {
-            "name": name,
-            "region": region,
-            "population": population
-        }
+        
+        return country
 
     except requests.exceptions.RequestException:
         return None
+    
+def parse_data(country):
+    country_name = country["name"]["common"]
+    official_name = country["name"]["official"]
+    population = country["population"]
+    region = country["region"]
+    borders = country["borders"]
 
+    return {
+        "name": country_name,
+        "official_name": official_name,
+        "population": population,
+        "region": region,
+        "borders": borders
+    }
 
 def main():
-    country_info = get_country_info("france")
+    country_data = get_country_info("france")
+    parsed_data = parse_data(country_data)
 
-    if country_info is None:
+    if country_data is None:
         print("Failed to connect to API")
     else:
-        print("Country:", country_info["name"])
-        print("Region:", country_info["region"])
-        print("Population:", country_info["population"])
-
+        print(parsed_data)
 
 main()
