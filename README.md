@@ -3,8 +3,8 @@
 ## Introduction
 API Data Analyser using the REST countries API to give information on country population data.
 
-
-## Pseudocode
+## System Design
+### Pseudocode
     SET API_URL to "https://restcountries.com/v3.1/name/"
     SET COUNTRY_NAME to "france"
     SET TIMEOUT to 10
@@ -35,7 +35,7 @@ API Data Analyser using the REST countries API to give information on country po
         PRINT "Failed to connect to API"
         SET data to null
 
-## Pseudocode - Parse data function
+### Pseudocode - Parse data function
     FUNCTION parse_data(country)
         return {
             country_name,
@@ -50,3 +50,12 @@ API Data Analyser using the REST countries API to give information on country po
     INPUT country
     country_data = parse_data(country)
 
+## Implementation Summary
+
+## Testing
+
+## Contribution Breakdown
+
+## Reflection
+
+## Conclusion
