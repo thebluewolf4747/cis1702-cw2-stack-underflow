@@ -50,6 +50,41 @@ API Data Analyser using the REST countries API to give information on country po
     INPUT country
     country_data = parse_data(country)
 
+### Pseudocode - save counrty data to text file 
+    Function save_to_file(parsed_country_data)
+
+        Open "countries.txt" in append mode
+
+        WRITE country namr to file
+        WRITE official name to file
+        WRITE region to file
+        WRITE population to file
+        WRITE borders to file 
+
+        WRITE newline 
+        CLOSE file
+    END FUNCTION 
+### Pseudocode - integration with main program 
+    CALL get_country_info(COUNTRY_NAME)
+
+    IF country data is null
+        PRINT"Failed to connect to API"
+    ELSE 
+        CALL parse_data(country data)
+        store result in parased_data
+
+        CALL save_to_file(parased_data)
+
+        PRINT parased_data 
+    END IF 
+### Pseudocode - testing 
+    TEST using vaild country name
+        EXPECT data to be printed 
+        EXPECT data to be saved in text file
+    TEST using invalid country name
+        EXPECT error message 
+        EXPECT no data saved
+
 ## Implementation Summary
 
 ## Testing
