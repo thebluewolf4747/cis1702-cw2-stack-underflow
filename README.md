@@ -77,17 +77,17 @@ API Data Analyser using the REST countries API to give information on country po
 
         PRINT parased_data 
     END IF 
-### Pseudocode - testing 
+
+## Implementation Summary
+
+## Testing
+### Test data for saving functions
     TEST using vaild country name
         EXPECT data to be printed 
         EXPECT data to be saved in text file
     TEST using invalid country name
         EXPECT error message 
         EXPECT no data saved
-
-## Implementation Summary
-
-## Testing
 
 ## Contribution Breakdown
 
