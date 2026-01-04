@@ -78,6 +78,16 @@ API Data Analyser using the REST countries API to give information on country po
         PRINT parased_data 
     END IF 
 
+## Pseudocode - Output to terminal
+    FUNCTION report (country_data)
+	    PRINT f"""
+	    Report:
+    Country name: (NAME)
+    Population: (POPULATION)
+    Region: (REGION)
+    Borders: (BORDERS)
+    """
+
 ## Implementation Summary
 
 ## Testing
