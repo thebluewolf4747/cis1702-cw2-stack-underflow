@@ -32,6 +32,15 @@ def parse_data(country):
         "borders": borders
     }
 
+def report (report_data):
+    print (f"""
+Here is a report of the parsed data:
+Country: {report_data['name']}
+Population: {report_data['population']}
+Region: {report_data['region']}
+Borders: {report_data['borders']}
+    """)
+
 def main():
     country_data = get_country_info("france")
     parsed_data = parse_data(country_data)
@@ -39,6 +48,9 @@ def main():
     if country_data is None:
         print("Failed to connect to API")
     else:
-        print(parsed_data)
+        #print(parsed_data)
+        report(parsed_data)
+        #Changed this to call the report function if it breaks the code the original line is just commented out
 
 main()
+
