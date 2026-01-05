@@ -147,6 +147,11 @@ API Data Analyser using the REST countries API to give information on country po
 	END FUNCTION
 
 ## Implementation Summary
+This application is an API data analyser using the REST Countries API that returns data about a country's population, region, and a country comparison. The program sends structured requests to the API, receives data in JSON format, and parses the response to extract relevant attributes such as population size and regional grouping.
+
+After being extracted, the data is formatted into a clear, readable terminal output. The analyser presents the selected country's name, population, and region in a structured layout to improve usability and readability. A comparison feature is also implemented, allowing the population of two countries to be analysed side-by-side.
+
+Finally, the data is saved to a text file for permanent storage.
 
 ## Testing
 ### Test data for saving functions
