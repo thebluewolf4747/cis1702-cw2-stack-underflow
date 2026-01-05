@@ -17,13 +17,18 @@ Compare countries based on population
 This serves as both an educational exercise in API handling and a practical tool for data analysis.
 
 2. Objective: The main objective of this project is to provide a simple, interactive system to analyse country data in real-time using the REST Countries API.
-
 Users can:
-Search for a country and retrieve information
-Save country data for future reference
-Compare populations between countries
-Generate statistical summaries of populations
-Group countries by region
+
+	Search for a country and retrieve information
+
+	Save country data for future reference
+
+	Compare populations between countries
+
+	Generate statistical summaries of populations
+
+	Group countries by region
+
 This gives a structured way to work with real-world data while learning about API integration, data processing, and basic analytics.
 
 4. Why This Project Was ChosenAPIs are a fundamental part of modern programming and software development.
