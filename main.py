@@ -18,20 +18,31 @@ def get_country_info(country_name):
         return None
     
 def parse_data(country):
-    country_name = country["name"]["common"]
-    official_name = country["name"]["official"]
-    population = country["population"]
-    region = country["region"]
-    borders = country["borders"]
+    parsed = None
 
-    return {
-        "name": country_name,
-        "official_name": official_name,
-        "population": population,
-        "region": region,
-        "borders": borders
-    }
+    try:
+        if country is None:
+            raise ValueError("No country data provided.")
+        
+        country_name = country["name"]["common"]
+        population = country["population"]
+        region = country["region"]
 
+    except (KeyError, TypeError, ValueError) as e:
+        print(f"Error during parse: {e}")
+
+    else:
+        parsed = {
+            "name": country_name,
+            "population": population,
+            "region": region
+        }
+    
+    finally:
+        print("Parsed data!")
+
+    return parsed        
+    
 def report (report_data):
     print (f"""
 Here is a report of the parsed data:
