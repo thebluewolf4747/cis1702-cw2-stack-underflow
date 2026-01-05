@@ -2,94 +2,63 @@
 
 ## Introduction
 API Data Analysis  using the REST countries API to give information on country population data.
-	Project Documentation: API Data Analysis using REST Countries API
+Project Documentation: API Data Analysis using REST Countries API
 	
-In today’s world, data drives decisions. Understanding country-specific statistics like population, region, and demographics is essential for businesses, 	researchers, and policymakers. The API Data Analysis project leverages the REST Countries API to fetch and analyse country information efficiently. By 		using a RESTful API, we can programmatically access up-to-date data about countries, process it, and generate meaningful insights.
-1. Project Goal
+In today’s world, data drives decisions. Understanding country-specific statistics like population, region, and demographics is essential for businesses, 	researchers, and policymakers. The API Data Analysis project leverages the REST Countries API to fetch and analyse country information efficiently. By using a RESTful API, we can programmatically access up-to-date data about countries, process it, and generate meaningful insights.
+1. Project Goal: 
+The goal of this project was to develop a command-line tool that interacts with a public API, performs basic data analysis, and generates a report file. 	The project uses the REST Countries API to retrieve country data and provide meaningful insights into population, region, and borders.
+The tool allows users to query a country by name, fetch data, analyse it, and store the results in a report file for future reference.
+This project focuses on creating a tool that allows users to:
 
-	The goal of this project was to develop a command-line tool that interacts with a public API, performs basic data analysis, and generates a report file. 	The project uses the REST Countries API to retrieve country data and provide meaningful insights into population, region, and borders.
-
-   The tool allows users to query a country by name, fetch data, analyse it, and store the results in a report file for future reference.
-   This project focuses on creating a tool that allows users to:
-
-   Retrieve detailed country information
-
-   Calculate population statistics
-
-   Group countries by region
-
-   Compare countries based on population
+- Retrieve detailed country information
+- Calculate population statistics
+- Group countries by region
+- Compare countries based on population
 
 This serves as both an educational exercise in API handling and a practical tool for data analysis.
 
 2. Objective: The main objective of this project is to provide a simple, interactive system to analyse country data in real-time using the REST Countries API.
 Users can:
-
-	Search for a country and retrieve information
-
-	Save country data for future reference
-
-	Compare populations between countries
-
-	Generate statistical summaries of populations
-
-	Group countries by region
+- Search for a country and retrieve information
+- Save country data for future reference
+- Compare populations between countries
+- Generate statistical summaries of populations
+- Group countries by region
 
 This gives a structured way to work with real-world data while learning about API integration, data processing, and basic analytics.
 
-4. Why This Project Was Chosen:
-	APIs are a fundamental part of modern programming and software development.
+3. Why This Project Was Chosen:
+- APIs are a fundamental part of modern programming and software development.
+- Country data is publicly available and provides a meaningful dataset for analysis.
+- This project combines data retrieval, processing, and presentation, covering multiple essential skills in computer science.
+- It introduces students to error handling, data parsing, storage, and analysis in a real-world scenario.
 
-	Country data is publicly available and provides a meaningful dataset for analysis.
+4. Advantages
+- Real-Time Data: The API always provides updated information, making the tool reliable.
+- Automation: Instead of manually searching country data, users can retrieve and process it programmatically.
+- Scalability: The tool can easily be extended to include more statistics or visualizations.
+- Educational Value: Helps users understand REST APIs, JSON parsing, and data analysis concepts.
+- Reusable: Data saved in files allows for future processing without repeated API calls.
 
-	This project combines data retrieval, processing, and presentation, covering multiple essential skills in computer science.
+5. Disadvantages / Limitations
+- API Dependency: If the REST Countries API is down or its endpoints change, the program may fail.
+- Data Limitation: Only the data provided by the API is available; additional statistics may need external sources.
+- Performance: Fetching data for many countries simultaneously could slow down the program.
+- Error Handling: Users must handle exceptions, such as invalid country names or missing fields.
 
-	It introduces students to error handling, data parsing, storage, and analysis in a real-world scenario.
+6. Future Applications - This project lays the foundation for multiple future enhancements:
+- Data Visualization: Generate charts and graphs for population or regional analysis.
+- Expanded Metrics: Include GDP, life expectancy, or literacy rate if APIs provide them.
+- Web Interface: Turn the program into a web application for user-friendly access.
+- Educational Tool: Teach students about geography, demographics, and API integration.
+- Data Science Integration: Feed the retrieved data into machine learning models for predictive analysis.
 
-6. Advantages
-	Real-Time Data: The API always provides updated information, making the tool reliable.
-	
-	Automation: Instead of manually searching country data, users can retrieve and process it programmatically.
-	
-	Scalability: The tool can easily be extended to include more statistics or visualizations.
-	
-	Educational Value: Helps users understand REST APIs, JSON parsing, and data analysis concepts.
-	
-	Reusable: Data saved in files allows for future processing without repeated API calls.
-
-8. Disadvantages / Limitations
-	API Dependency: If the REST Countries API is down or its endpoints change, the program may fail.
-	
-	Data Limitation: Only the data provided by the API is available; additional statistics may need external sources.
-	
-	Performance: Fetching data for many countries simultaneously could slow down the program.
-	
-	Error Handling: Users must handle exceptions, such as invalid country names or missing fields.
-
-10. Future Applications
-	   This project lays the foundation for multiple future enhancements:
-		
-	   Data Visualization: Generate charts and graphs for population or regional analysis.
-		
-	   Expanded Metrics: Include GDP, life expectancy, or literacy rate if APIs provide them.
-		
-	   Web Interface: Turn the program into a web application for user-friendly access.
-		
-	   Educational Tool: Teach students about geography, demographics, and API integration.
-		
-	   Data Science Integration: Feed the retrieved data into machine learning models for predictive analysis.
-
-11. How the Project Works
-    
-	   Data Retrieval: The program fetches country data from the REST Countries API using HTTP requests.
-		
-	   Parsing: Extracts essential information such as country name, population, region, and borders.
-		
-	   Reporting: Generates a readable report of the parsed data for the user.
-		
-	   Storage: Saves country data into a text file for future reference.
-		
-	   Analysis: Calculates total, average, minimum, and maximum population, groups countries by region, and allows comparison between countries.
+7. How the Project Works
+- Data Retrieval: The program fetches country data from the REST Countries API using HTTP requests.
+- Parsing: Extracts essential information such as country name, population, region, and borders.
+- Reporting: Generates a readable report of the parsed data for the user.
+- Storage: Saves country data into a text file for future reference.
+- Analysis: Calculates total, average, minimum, and maximum population, groups countries by region, and allows comparison between countries.
 
 
 | Requirement                         | Implementation                                                                                                                                            |
@@ -105,7 +74,7 @@ This gives a structured way to work with real-world data while learning about AP
 
 
 ## System Design
-### Pseudocode
+### Pseudocode - Fetch data
     SET API_URL to "https://restcountries.com/v3.1/name/"
     SET COUNTRY_NAME to "france"
     SET TIMEOUT to 10
@@ -140,18 +109,14 @@ This gives a structured way to work with real-world data while learning about AP
     FUNCTION parse_data(country)
         return {
             country_name,
-            country_official_name,
             country_population,
-            country_region,
-            country_subregion,
-            country_capital,
-            country_currencies
+            country_region
         }
 
     INPUT country
     country_data = parse_data(country)
 
-### Pseudocode - save counrty data to text file 
+### Pseudocode - save country data to text file 
     Function save_to_file(parsed_country_data)
 
         Open "countries.txt" in append mode
@@ -189,7 +154,7 @@ This gives a structured way to work with real-world data while learning about AP
     Borders: (BORDERS)
     """
 
-## Data Anaylsis 
+## Pseudocode - Data Analysis 
 
 	FUNCTION calculate_population_stats(countries_data)
     	INPUT: List of country data objects
