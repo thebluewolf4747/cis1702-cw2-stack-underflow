@@ -245,6 +245,8 @@ Added data analysis functions pseudocode to be implemented in Python by Joel:
 - compare_countries()
 
 Neil:
+- Added the pseudocode for the output of the analysed data
+- Added the actual code for this function
 
 Joel:
 - Implemented Jack's pseudocode
@@ -253,5 +255,9 @@ Joel:
 - Implemented save function in Python
 
 ## Reflection
+In summary, this project was a valuable learning experience that integrated multiple core programming concepts into a realistic application. By working with a real-world API, I was able to connect theory with practical programming, especially in terms of handling JSON data, making HTTP requests, and navigating unpredictable user input. Utilising the REST Countries API made the project feel truly relevant and meaningful, rather than just another program filled with hard-coded information.
+A major takeaway for me was realizing the significance of error handling when working with external APIs. We faced some genuine issues, such as network failures, invalid country names, and missing fields, all of which had to be managed effectively to avoid crashes. By implementing defensive coding techniques and using try-except blocks, we were able to make the program much sturdier and easier for users. This experience reinforced the idea that real software should always be prepared for things to go wrong.
+Teamwork played a major role in the success of the project. Splitting tasks such as API handling, data parsing, analysis, and documentation ensured that everyone contributed meaningfully. Translating pseudocode into working Python code showed how planning before coding saves time and reduces errors. Reviewing each other’s work also helped catch mistakes early and improve overall code quality.
+That said, the project does have limitations. The program relies entirely on the REST Countries API, meaning changes to the API or downtime could break functionality. Performance could also become an issue if the tool were expanded to fetch data for many countries at once. However, these limitations helped highlight areas for future improvement, such as caching data locally, optimising requests, or expanding to additional APIs.
 
 ## Conclusion
