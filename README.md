@@ -88,6 +88,64 @@ API Data Analyser using the REST countries API to give information on country po
     Borders: (BORDERS)
     """
 
+## Data Anaylsis 
+
+	FUNCTION calculate_population_stats(countries_data)
+    	INPUT: List of country data objects
+    	OUTPUT: Object with population statistics
+    	IF countries_data is empty THEN
+        	RETURN null
+    	END IF
+    	SET total_pop = 0
+    	SET max_pop = 0
+    	SET min_pop = very large number
+    	SET max_country = null
+    	SET min_country = null
+    	FOR EACH country IN countries_data
+        	ADD country.population TO total_pop
+        	IF country.population > max_pop THEN
+            	SET max_pop = country.population
+            	SET max_country = country
+        	END IF
+        	IF country.population < min_pop THEN
+            	SET min_pop = country.population
+            	SET min_country = country
+        	END IF
+    	END FOR
+    	SET avg_pop = total_pop / LENGTH(countries_data)
+    	RETURN {
+        	total_population: total_pop,
+        	average_population: avg_pop,
+        	most_populous: max_country,
+        	least_populous: min_country
+    	}
+	END FUNCTION
+
+	FUNCTION group_by_region(countries_data)
+    	INPUT: List of country data objects
+    	OUTPUT: Dictionary with regions as key
+    	SET region_groups = empty dictionary
+    	FOR EACH country IN countries_data
+        	SET region = country.region
+        	IF region NOT IN region_groups THEN
+            	region_groups[region] = empty list
+        	END IF
+        	APPEND country TO region_groups[region]
+    	END FOR
+    	RETURN region_groups
+	END FUNCTION
+
+	FUNCTION compare_countries(country1, country2)
+    	INPUT: Two country data objects
+    	OUTPUT: Comparison object
+    	SET pop_ratio = country1.population / country2.population
+    	RETURN {
+        	country1_name: country1.name,
+        	country2_name: country2.name,
+        	population_ratio: pop_ratio
+			{
+	END FUNCTION
+
 ## Implementation Summary
 
 ## Testing
