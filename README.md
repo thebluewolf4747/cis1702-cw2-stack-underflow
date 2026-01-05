@@ -4,7 +4,7 @@
 API Data Analysis  using the REST countries API to give information on country population data.
 	Project Documentation: API Data Analysis using REST Countries API
 	
-In today’s world, data drives decisions. Understanding country-specific statistics like population, region, and demographics is essential for businesses, 	researchers, and policymakers. The API Data Analyzer project leverages the REST Countries API to fetch and analyse country information efficiently. By 		using a RESTful API, we can programmatically access up-to-date data about countries, process it, and generate meaningful insights.
+In today’s world, data drives decisions. Understanding country-specific statistics like population, region, and demographics is essential for businesses, 	researchers, and policymakers. The API Data Analysis project leverages the REST Countries API to fetch and analyse country information efficiently. By 		using a RESTful API, we can programmatically access up-to-date data about countries, process it, and generate meaningful insights.
 1. Project Goal
 
 	The goal of this project was to develop a command-line tool that interacts with a public API, performs basic data analysis, and generates a report file. 	The project uses the REST Countries API to retrieve country data and provide meaningful insights into population, region, and borders.
