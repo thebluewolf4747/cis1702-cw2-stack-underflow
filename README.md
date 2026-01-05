@@ -163,6 +163,28 @@ Finally, the data is saved to a text file for permanent storage.
         EXPECT no data saved
 
 ## Contribution Breakdown
+Kim:
+- Added pseudocode for his function with defensive coding features
+- Converted this pseudocode into Python code
+
+Rayyan:
+- Added the parse data function to the code - this included the data to be analysed
+- Worked on the implementation summary in the documentation
+- Implemented robust error handling
+
+Jack:
+Added data analysis functions pseudocode to be implemented in Python by Joel:
+- calculate_population_stats()
+- group_by_region()
+- compare_countries()
+
+Neil:
+
+Joel:
+- Implemented Jack's pseudocode
+- Added testing to documentation
+- Added save function to pseudocode
+- Implemented save function in Python
 
 ## Reflection
 
