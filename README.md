@@ -209,13 +209,31 @@ How the Project Works:
 Finally, the data is saved to a text file for permanent storage.
 
 ## Testing
-### Test data for saving functions
-    TEST using vaild country name
-        EXPECT data to be printed 
-        EXPECT data to be saved in text file
-    TEST using invalid country name
-        EXPECT error message 
-        EXPECT no data saved
+
+### Variable Testing Table
+
+| Variable      | Testing Type     | Input    | Expected Result                                                                 | Actual Result | Improvement |
+|---------------|------------------|----------|---------------------------------------------------------------------------------|---------------|-------------|
+| country1_name | Normal Data      | "France" | No error: Program continues to run                                              |               |             |
+| Country1_name | Erroneous Data   | 2        | Error: Incorrect Data Type, caught by error handling                            |               |             |
+| Country1_name | Erroneous Data   | Texas    | Error: Correct Data Type, however not within Data set, caught by error handling |               |             |
+| country2_name | Normal Data      | "France" | No error: Program continues to run                                              |               |             |
+| Country2_name | Erroneous Data   | ""       | Error: No data entered, caught by error handling                                |               |             |
+| Country2_name | Erroneous Data   | Texas    | Error: Correct Data Type, however not within Data set, caught by error handling |               |             |
+| population    | Normal Data      | 10000    | No error: Program continues to run                                              |               |             |
+| population    | Boundary Testing | -1       | Error: Population cannot be <800, caught by error handling                      |               |             |
+| population    | Boundary Testing | 799      | Error: Population cannot be <800, caught by error handling                      |               |             |
+| population    | Boundary Testing | 800      | No error: Program continues normally                                            |               |             |
+| population    | Erroneous Data   | "France" | Error: Incorrect Data Type, caught by error handling                            |               |             |
+| region        | Normal Data      | "Europe" | No error: Program continues normally                                            |               |             |
+| region        | Erroneous Data   | "France" | Error: Correct Data Type, however not within Data set, caught by error handling |               |             |
+| region        | Erroneous Data   | 52       | Error: Incorrect Data Type, caught by error handling                            |               |             |
+
+### Non variable Testing
+
+| Static Testing                                                                                           | Dynamic Testing                                                                                                                                                                              |
+|----------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Prior to running tests Syntax and grammar was examined throughout to ensure accuracy and proper working. | Through each stage of development the code was continually ran to ensure it would run without error, through the inclusion of each module running was tested in isolation and when combined. |
 
 ## Contribution Breakdown
 Kim:
