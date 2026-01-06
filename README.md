@@ -240,8 +240,11 @@ Neil:
 
 Joel:
 - **Implemented Jack's pseudocode**
-- Wrote introduction of document (and small parts of other sections - some parts were moved from the introduction to other sections)
+- Wrote the hole introduction of document (and parts of other sections - some parts were moved from the introduction to other sections)
 - Added save function to pseudocode and python file
+- added test data saving function,
+- prepared test plan documentation 
+- 
 
 ## Reflection
 | Requirement                         | Implementation                                                                                                                                            |
