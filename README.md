@@ -270,3 +270,4 @@ Teamwork played a major role in the success of the project. Splitting tasks such
 That said, the project does have limitations. The program relies entirely on the REST Countries API, meaning changes to the API or downtime could break functionality. Performance could also become an issue if the tool were expanded to fetch data for many countries at once. However, these limitations helped highlight areas for future improvement, such as caching data locally, optimising requests, or expanding to additional APIs.
 
 ## Conclusion
+In conclusion, this country data analyser is a good implementation of working with APIs, within a well-structured environment. The analyser allows users to compare populations of countries, and generate summaries of analysed data.
