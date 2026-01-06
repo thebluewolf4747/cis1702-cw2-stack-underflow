@@ -24,7 +24,10 @@ def get_country_info(country_name):
         return country
 
     except requests.exceptions.RequestException:
+        # Handles all network-related errors
+        print("Network error occurred while fetching country data.")
         return None
+
     
 def parse_data(country):
     """ 
@@ -42,24 +45,23 @@ def parse_data(country):
         if country is None:
             raise ValueError("No country data provided.")
         
+        # Key fields
         country_name = country["name"]["common"]
         population = country["population"]
         region = country["region"]
 
-    except (KeyError, TypeError, ValueError) as e:
-        print(f"Error during parse: {e}")
-
-    else:
         parsed = {
             "name": country_name,
             "population": population,
             "region": region
         }
-    
-    finally:
-        print("Parsed data!")
 
-    return parsed
+    except (KeyError, TypeError, ValueError) as e:
+        # Handles parsing errors
+        print(f"Error during parse: {e}")
+
+    else:
+        return parsed
     
 def report (report_data, population_stats, comparison):
     """
@@ -74,24 +76,27 @@ def report (report_data, population_stats, comparison):
     None (prints the output).
 
     """
-
-    print (f"""
-Here is a report of the parsed data:
+    try:
+        print (f"""
+Here is a report of the parsed data (for France as an example)):
 Country: {report_data['name']}
 Population: {report_data['population']}
 Region: {report_data['region']}
-    """)
-    print(f"""
+        """)
+        print(f"""
 Here are the population statistics for {report_data['name']}:
 Total population: {population_stats['total_population']}
 Average population: {population_stats['average_population']}
-          """)
-    print(f"""
+            """)
+        print(f"""
 Here is the population ratio between two countries:
 First country: {comparison['country1_name']}
 Second country: {comparison['country2_name']}
 Population ratio: {comparison['population_ratio']}
-    """)
+        """)
+
+    except Exception as e:
+        print(f"Error during report generation: {e}")
 
 # save country data to text file 
 def save_country_to_file(country_data):
@@ -108,14 +113,22 @@ def save_country_to_file(country_data):
     if country_data is None:
         return
 
-    with open("countries.txt", "a") as file:
-        file.write(
-            f"Country: {country_data['name']}, "
-            f"Population: {country_data['population']}, "
-            f"Region: {country_data['region']}\n"
-        )
+    try:
+        with open("countries.txt", "a") as file:
+            file.write(
+                f"Country: {country_data['name']}, "
+                f"Population: {country_data['population']}, "
+                f"Region: {country_data['region']}\n"
+            )
 
-        return file
+    except IOError as e:
+        print(f"Error writing to file: {e}")
+    
+    except Exception as e:
+        print(f"Unexpected error: {e}")
+    
+    return file
+
 # calculate populaation statistics 
 def calculate_population_stats(countries_data):
     """
@@ -139,19 +152,24 @@ def calculate_population_stats(countries_data):
     max_country = None
     min_country = None
 
-    for country in countries_data:
-        population = country.get("population", 0)
-        total_pop += population
+    try:
+        for country in countries_data:
+            population = country.get("population", 0)
+            total_pop += population
 
-        if population > max_pop:
-            max_pop = population
-            max_country = country
+            if population > max_pop:
+                max_pop = population
+                max_country = country
 
-        if population < min_pop:
-            min_pop = population
-            min_country = country
+            if population < min_pop:
+                min_pop = population
+                min_country = country
 
-    avg_pop = total_pop / len(countries_data)
+        avg_pop = total_pop / len(countries_data)
+    
+    except Exception as e:
+        print(f"Error calculating population statistics: {e}")
+        return None
 
     return {
         "total_population": total_pop,
@@ -175,13 +193,17 @@ def group_by_region(countries_data):
 
     region_groups = {}
 
-    for country in countries_data:
-        region = country.get("region", "Unknown")
+    try:
+        for country in countries_data:
+            region = country.get("region", "Unknown")
+            
+            if region not in region_groups:
+                region_groups[region] = []
+            
+            region_groups[region].append(country)
 
-        if region not in region_groups:
-            region_groups[region] = []
-
-        region_groups[region].append(country)
+    except Exception as e:
+        print(f"Error during grouping by region: {e}")
 
     return region_groups
 
@@ -220,46 +242,29 @@ def integrate_and_store(country_name):
     
     """
     
-    country_data = get_country_info(country_name)
+    try:
+        country_data = get_country_info(country_name)
 
-    if country_data is None:
-        print("Failed to connect to API")
+        if country_data is None:
+            raise ValueError("Failed to connect to API")
+
+        parsed_data = parse_data(country_data)
+        
+        if parsed_data is None:
+            raise ValueError("Failed to parse country data")
+        
+        save_country_to_file(parsed_data)
+
+    except ValueError as e:
+        print(f"Value error: {e}")
         return None
-
-    parsed_data = parse_data(country_data)
-    save_country_to_file(parsed_data)
-
-    return parsed_data
-
-# testing systems 
-def test_system():
-    """
-    Tests the integration and storage system.
     
-    Returns:
-    None
+    except Exception as e:
+        print(f"Unexpected error during integration: {e}")
+        return None
     
-    """
-
-    countries = []
-
-    france = integrate_and_store("france")
-    germany = integrate_and_store("germany")
-
-    if france:
-        countries.append(france)
-    if germany:
-        countries.append(germany)
-
-    stats = calculate_population_stats(countries)
-    print("Population Statistics:", stats)
-
-    grouped = group_by_region(countries)
-    print("Grouped by Region:", grouped)
-
-    if len(countries) == 2:
-        comparison = compare_countries(countries[0], countries[1])
-        print("Country Comparison:", comparison)
+    else:
+        return parsed_data
         
 def main():
     """
@@ -270,17 +275,29 @@ def main():
 
     """
 
-    country_data = get_country_info("france")
+    country_data = get_country_info("France")
     parsed_data = parse_data(country_data)
-    comparison_data = {"country1_name": "france", "country2_name": "germany", "population_ratio": 1.5}
+    comparison_data = {"country1_name": "France", "country2_name": "Germany", "population_ratio": 1.5}
 
     if country_data is None:
         print("Failed to connect to API")
     else:
         report(parsed_data, calculate_population_stats([parsed_data]), comparison_data)
-        test_system()
+        countries = []
+
+        france = integrate_and_store("France")
+        germany = integrate_and_store("Germany")
+
+        if france:
+            countries.append(france)
+        if germany:
+            countries.append(germany)
+
+        grouped = group_by_region([get_country_info("France"), get_country_info("Germany")])
+        print("Grouped by Region:", grouped)
+
+        if len(countries) == 2:
+            comparison = compare_countries(get_country_info("France"), get_country_info("Germany"))
+            print("Country Comparison:", comparison)
 
 main()
-
-
-
