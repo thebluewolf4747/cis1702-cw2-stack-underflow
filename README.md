@@ -232,7 +232,7 @@ Added **data analysis functions** pseudocode to be implemented in Python by Joel
 - calculate_population_stats()
 - group_by_region()
 - compare_countries()
-- Implemented **save function** in Python (Joel's pseudocode)
+- Wrote the testing section in documentation
 
 Neil:
 - Added the **pseudocode for the output** of the analysed data
@@ -240,8 +240,8 @@ Neil:
 
 Joel:
 - **Implemented Jack's pseudocode**
-- Wrote documentation sections: Introduction and Testing (and small parts of other sections - some parts were moved from the introduction to other sections)
-- Added save function to pseudocode
+- Wrote introduction of document (and small parts of other sections - some parts were moved from the introduction to other sections)
+- Added save function to pseudocode and python file
 
 ## Reflection
 | Requirement                         | Implementation                                                                                                                                            |
