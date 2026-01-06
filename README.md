@@ -145,14 +145,23 @@ This gives a structured way to work with real-world data while learning about AP
     END IF 
 
 ## Pseudocode - Output to terminal
-    FUNCTION report (country_data)
-	    PRINT f"""
-	    Report:
-    Country name: (NAME)
-    Population: (POPULATION)
-    Region: (REGION)
-    Borders: (BORDERS)
-    """
+	FUNCTION report (country_data, population_stats, comparison_of_countries)
+		OUTPUT
+		Report:
+		Name: COUNTRY NAME
+		Population: POPULATION
+		Region: REGION
+	
+		Stats about the population
+		Total population: TOTAL POPULATION
+		Average population: AVG POPULATION
+	
+		Comparison data between two countries:
+		Country 1: COUNTRY 1 NAME
+		Country 2: COUNTRY 2 NAME
+		Population ratio: POPULATION RATIO
+		END OUTPUT
+	END FUNCTION 
 
 ## Pseudocode - Data Analysis 
 
