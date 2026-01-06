@@ -231,5 +231,7 @@ Finally, the data is saved to a text file for permanent storage.
 ## Contribution Breakdown
 
 ## Reflection
+Overall, the project was a practical implementation of collecting data from APIs and analysing it. The API wouldn't always return data, which required error handling to fix this. Parsing JSON responses also required error handling to handle missing fields, for example. Implementing try-except blocks made the program more robust, which was noticed when testing invalid country names. Additionally, the program had to be structured logically - this meant separating tasks into several functions for fetching data, parsing the data, and outputting/saving the data.
+One main limitation of this implementation is that program was dependent on stability of the REST countries API, however, the defensive coding implemented aims to minimise this issue.
 
 ## Conclusion
