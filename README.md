@@ -232,10 +232,42 @@ Finally, the data is saved to a text file for permanent storage.
 | API_URL                   | Erroneous Data   | Invalid URL        | Connection error handled gracefully                            | As expected   | N/A         |
 
 ### Screenshots 
-number1
+(1)
 <img width="1430" height="68" alt="Screenshot 2026-01-06 at 20 19 34" src="https://github.com/user-attachments/assets/e51e581b-c8a2-41f5-8429-4716b7f6046b" />
 
-number2 :
+(2)
+<img width="1830" height="113" alt="image" src="https://github.com/user-attachments/assets/b6a45c51-8363-4990-a746-9d3e75b9e8f4" />
+
+(3)
+<img width="1838" height="114" alt="image" src="https://github.com/user-attachments/assets/10cae9b2-0136-431b-a72c-174ba53b937c" />
+
+(4) - same output as 1 but with France as second country (does sometimes influence statistics)
+
+(5)
+<img width="1825" height="108" alt="image" src="https://github.com/user-attachments/assets/b33b5020-5d5a-4567-ac48-7f8fe8edb5ae" />
+
+(6)
+<img width="1824" height="111" alt="image" src="https://github.com/user-attachments/assets/6b07c001-2be1-47d8-9b7c-bd272636dda0" />
+
+(7) - same output as 2 but with the second country
+
+(8) - Same output as 1 with other countries
+
+(9) - No data printed - user asked to try again.
+
+(10) - saved to text file
+
+(11) - Not saved to text file
+
+(12) - Saved successfully
+<img width="806" height="152" alt="image" src="https://github.com/user-attachments/assets/e0013c67-2ff4-4a32-b8db-53dbfaf620ef" />
+
+(13) - Data appended
+
+(14) - program works as expected
+
+(15) - Error handling:
+<img width="1063" height="157" alt="image" src="https://github.com/user-attachments/assets/51a0f15e-3a57-4092-a957-e0c2004c9425" />
         
 ### Non variable Testing
 
