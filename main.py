@@ -43,13 +43,23 @@ def parse_data(country):
 
     return parsed        
     
-def report (report_data):
+def report (report_data, population_stats, comparison):
     print (f"""
 Here is a report of the parsed data:
 Country: {report_data['name']}
 Population: {report_data['population']}
 Region: {report_data['region']}
-Borders: {report_data['borders']}
+    """)
+    print(f"""
+Here are the population statistics for {report_data['name']}:
+Total population: {population_stats['total_population']}
+Average population: {population_stats['average_population']}
+          """)
+    print(f"""
+Here is the population ratio between two countries:
+First country: {comparison['country1_name']}
+Second country: {comparison['country2_name']}
+Population ratio: {comparison['population_ratio']}
     """)
 # save country data to text file 
 def save_country_to_file(country_data):
@@ -164,10 +174,8 @@ def main():
     if country_data is None:
         print("Failed to connect to API")
     else:
-        #print(parsed_data)
         report(parsed_data)
-        #Changed this to call the report function if it breaks the code the original line is just commented out
-
 main()
+
 
 
