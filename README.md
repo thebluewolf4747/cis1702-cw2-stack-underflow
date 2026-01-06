@@ -235,3 +235,4 @@ Overall, the project was a practical implementation of collecting data from APIs
 One main limitation of this implementation is that program was dependent on stability of the REST countries API, however, the defensive coding implemented aims to minimise this issue.
 
 ## Conclusion
+In conclusion, this country data analyser is a good implementation of working with APIs, within a well-structured environment. The analyser allows users to compare populations of countries, and generate summaries of analysed data.
