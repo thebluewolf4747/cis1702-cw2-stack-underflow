@@ -45,34 +45,7 @@ This gives a structured way to work with real-world data while learning about AP
 - Data Limitation: Only the data provided by the API is available; additional statistics may need external sources.
 - Performance: Fetching data for many countries simultaneously could slow down the program.
 - Error Handling: Users must handle exceptions, such as invalid country names or missing fields.
-
-6. Future Applications - This project lays the foundation for multiple future enhancements:
-- Data Visualization: Generate charts and graphs for population or regional analysis.
-- Expanded Metrics: Include GDP, life expectancy, or literacy rate if APIs provide them.
-- Web Interface: Turn the program into a web application for user-friendly access.
-- Educational Tool: Teach students about geography, demographics, and API integration.
-- Data Science Integration: Feed the retrieved data into machine learning models for predictive analysis.
-
-7. How the Project Works
-- Data Retrieval: The program fetches country data from the REST Countries API using HTTP requests.
-- Parsing: Extracts essential information such as country name, population, region, and borders.
-- Reporting: Generates a readable report of the parsed data for the user.
-- Storage: Saves country data into a text file for future reference.
-- Analysis: Calculates total, average, minimum, and maximum population, groups countries by region, and allows comparison between countries.
-
-
-| Requirement                         | Implementation                                                                                                                                            |
-| ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|   Interact with a public JSON API   | The program fetches country data from the **REST Countries API** using Python’s `requests` library.                                                       |
-|   User input query                  | Users can input a country name (e.g., `"France"`) which is used to fetch data from the API.                                                               |
-|   Parse JSON response               | The JSON response is parsed to extract key information including country name, population, region, and borders                     						  |
-|   Data Extraction                   | At least four key pieces of data are extracted: **name, population, region, borders**.                                                                    |
-|   Simple Analysis                   | The program calculates **total, average, largest, and smallest populations**, compares populations between two countries, and groups countries by region. |
-|   Display Output                    | A clean summary is printed to the console using a formatted **report function**.                                                                          |
-|   Generate Report File              | The data is appended to a **`countries.txt`** file for record-keeping.                                                                                    |
-|   Error Handling                    | Robust error handling is implemented with `try-except` blocks for network errors, invalid input, and missing fields in the JSON response.                 |              
-
-
+            
 ## System Design
 ### Pseudocode - Fetch data
     SET API_URL to "https://restcountries.com/v3.1/name/"
@@ -226,6 +199,13 @@ This application is an API data analyser using the REST Countries API that retur
 
 After being extracted, the data is formatted into a clear, readable terminal output. The analyser presents the selected country's name, population, and region in a structured layout to improve usability and readability. A comparison feature is also implemented, allowing the population of two countries to be analysed side-by-side.
 
+How the Project Works:
+- Data Retrieval: The program fetches country data from the REST Countries API using HTTP requests.
+- Parsing: Extracts essential information such as country name, population, region, and borders.
+- Reporting: Generates a readable report of the parsed data for the user.
+- Storage: Saves country data into a text file for future reference.
+- Analysis: Calculates total, average, minimum, and maximum population, groups countries by region, and allows comparison between countries.
+
 Finally, the data is saved to a text file for permanent storage.
 
 ## Testing
@@ -239,31 +219,42 @@ Finally, the data is saved to a text file for permanent storage.
 
 ## Contribution Breakdown
 Kim:
-- Added pseudocode for his function with defensive coding features
-- Converted this pseudocode into Python code
+- Added **pseudocode** for his function with defensive coding features
+- Converted this pseudocode into Python **code**
 
 Rayyan:
-- Added the parse data function to the code - this included the data to be analysed
-- Worked on the implementation summary in the documentation
-- Implemented robust error handling
+- Added the **parse data function** to the **pseudocode and Python code** - this included the data to be analysed
+- Worked on **documentation**: Implementation Summary, Reflection and Conclusion sections
+- Refactored code to include a lot of robust **error handling**
 
 Jack:
-Added data analysis functions pseudocode to be implemented in Python by Joel:
+Added **data analysis functions** pseudocode to be implemented in Python by Joel:
 - calculate_population_stats()
 - group_by_region()
 - compare_countries()
+- Implemented **save function** in Python (Joel's pseudocode)
 
 Neil:
-- Added the pseudocode for the output of the analysed data
-- Added the actual code for this function
+- Added the **pseudocode for the output** of the analysed data
+- Added the **actual code** for this function in the Python file
 
 Joel:
-- Implemented Jack's pseudocode
-- Added testing to documentation
+- **Implemented Jack's pseudocode**
+- Wrote documentation sections: Introduction and Testing (and small parts of other sections - some parts were moved from the introduction to other sections)
 - Added save function to pseudocode
-- Implemented save function in Python
 
 ## Reflection
+| Requirement                         | Implementation                                                                                                                                            |
+| ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|   Interact with a public JSON API   | The program fetches country data from the **REST Countries API** using Python’s `requests` library.                                                       |
+|   User input query                  | Users can input a country name (e.g., `"France"`) which is used to fetch data from the API.                                                               |
+|   Parse JSON response               | The JSON response is parsed to extract key information including country name, population, region, and borders                     						  |
+|   Data Extraction                   | At least four key pieces of data are extracted: **name, population, region, borders**.                                                                    |
+|   Simple Analysis                   | The program calculates **total, average, largest, and smallest populations**, compares populations between two countries, and groups countries by region. |
+|   Display Output                    | A clean summary is printed to the console using a formatted **report function**.                                                                          |
+|   Generate Report File              | The data is appended to a **`countries.txt`** file for record-keeping.                                                                                    |
+|   Error Handling                    | Robust error handling is implemented with `try-except` blocks for network errors, invalid input, and missing fields in the JSON response.                 |  
+
 In summary, this project was a valuable learning experience that integrated multiple core programming concepts into a realistic application. By working with a real-world API, I was able to connect theory with practical programming, especially in terms of handling JSON data, making HTTP requests, and navigating unpredictable user input. Utilising the REST Countries API made the project feel truly relevant and meaningful, rather than just another program filled with hard-coded information.
 A major takeaway for me was realizing the significance of error handling when working with external APIs. We faced some genuine issues, such as network failures, invalid country names, and missing fields, all of which had to be managed effectively to avoid crashes. By implementing defensive coding techniques and using try-except blocks, we were able to make the program much sturdier and easier for users. This experience reinforced the idea that real software should always be prepared for things to go wrong.
 Teamwork played a major role in the success of the project. Splitting tasks such as API handling, data parsing, analysis, and documentation ensured that everyone contributed meaningfully. Translating pseudocode into working Python code showed how planning before coding saves time and reduces errors. Reviewing each other’s work also helped catch mistakes early and improve overall code quality.
