@@ -1,10 +1,10 @@
 # Stack Underflow - REST Countries Analyser
 
 ## Introduction
-API Data Analysis  using the REST countries API to give information on country population data.
+API Data Analyse using the REST countries API to give information on country population data.
 Project Documentation: API Data Analysis using REST Countries API
 	
-In today’s world, data drives decisions. Understanding country-specific statistics like population, region, and demographics is essential for businesses, 	researchers, and policymakers. The API Data Analysis project leverages the REST Countries API to fetch and analyse country information efficiently. By using a RESTful API, we can programmatically access up-to-date data about countries, process it, and generate meaningful insights.
+In today’s world, data drives decisions. Understanding country-specific statistics like population, region, and demographics is essential for businesses, 	researchers, and policymakers. The API Data Analyse project leverages the REST Countries API to fetch and analyse country information efficiently. By using a RESTful API, we can programmatically access up-to-date data about countries, process it, and generate meaningful insights.
 1. Project Goal: 
 The goal of this project was to develop a command-line tool that interacts with a public API, performs basic data analysis, and generates a report file. 	The project uses the REST Countries API to retrieve country data and provide meaningful insights into population, region, and borders.
 The tool allows users to query a country by name, fetch data, analyse it, and store the results in a report file for future reference.
@@ -196,6 +196,7 @@ This gives a structured way to work with real-world data while learning about AP
 
 ## Implementation Summary
 This application is an API data analyser using the REST Countries API that returns data about a country's population, region, and a country comparison. The program sends structured requests to the API, receives data in JSON format, and parses the response to extract relevant attributes such as population size and regional grouping.
+The project was developed using Visual Studio Code, allowing efficient debugging and code navigation. Git was used for version control, enabling safe experimentation and collaborative development while maintaining code stability.
 
 After being extracted, the data is formatted into a clear, readable terminal output. The analyser presents the selected country's name, population, and region in a structured layout to improve usability and readability. A comparison feature is also implemented, allowing the population of two countries to be analysed side-by-side.
 
@@ -239,12 +240,12 @@ Neil:
 - Added the **actual code** for this function in the Python file
 
 Joel:
-- **Implemented Jack's pseudocode**
-- Wrote the hole introduction of document (and parts of other sections - some parts were moved from the introduction to other sections)
+- **Implemented Jack's pseudocode** into actual working code, 
+- Wrote the whole introduction of document (and parts of other sections(project goal, objective, how it works, advantages & disadvantages) - some parts were moved from the introduction to other sections)
 - Added save function to pseudocode and python file
 - added test data saving function,
-- prepared test plan documentation 
-- 
+- prepared a table of requirements and implementions 
+- helped in documentation, (refining the documents)
 
 ## Reflection
 | Requirement                         | Implementation                                                                                                                                            |
@@ -263,5 +264,14 @@ A major takeaway for me was realizing the significance of error handling when wo
 Teamwork played a major role in the success of the project. Splitting tasks such as API handling, data parsing, analysis, and documentation ensured that everyone contributed meaningfully. Translating pseudocode into working Python code showed how planning before coding saves time and reduces errors. Reviewing each other’s work also helped catch mistakes early and improve overall code quality.
 That said, the project does have limitations. The program relies entirely on the REST Countries API, meaning changes to the API or downtime could break functionality. Performance could also become an issue if the tool were expanded to fetch data for many countries at once. However, these limitations helped highlight areas for future improvement, such as caching data locally, optimising requests, or expanding to additional APIs.
 
+A key design decision was separating API access, parsing, analysis, and reporting into independent functions. This modular approach reduced coupling between components, making the code easier to test, debug, and extend. For example, population analysis functions can operate independently of the API, allowing future reuse with different data sources.
+Using pseudocode before implementation significantly reduced integration issues between team members. When translating pseudocode into Python, inconsistencies were easier to identify early, which improved overall code quality and reduced debugging time.
+
 ## Conclusion
-In conclusion, this country data analyser is a good implementation of working with APIs, within a well-structured environment. The analyser allows users to compare populations of countries, and generate summaries of analysed data.
+In conclusion, the REST Countries API Data Analyser successfully meets the objectives outlined in the project brief and demonstrates a strong understanding of procedural programming, API integration, and data analysis. The application effectively retrieves real-time country data, processes JSON responses, performs meaningful population-based analysis, and presents the results in a clear and structured manner through both terminal output and persistent file storage.
+
+The project showcases good software engineering practices, including modular design, robust error handling, and clear separation of concerns. By incorporating testing, defensive coding, and detailed documentation, the analyser goes beyond basic functionality to deliver a reliable and maintainable solution. Furthermore, the collaborative approach taken by the group ensured efficient task distribution and contributed to the overall quality of the final product.
+
+While the system has limitations due to its reliance on an external API and potential performance constraints at scale, these challenges highlight realistic considerations faced in real-world software development. The project provides a solid foundation for future enhancements, such as data visualisation, caching mechanisms, or expansion to additional APIs.
+
+Overall, this project represents a successful implementation of an API-driven data analysis tool and reflects both technical competence and effective teamwork.
