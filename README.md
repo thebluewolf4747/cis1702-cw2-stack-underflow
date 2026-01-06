@@ -235,7 +235,7 @@ Finally, the data is saved to a text file for permanent storage.
 number1
 <img width="1430" height="68" alt="Screenshot 2026-01-06 at 20 19 34" src="https://github.com/user-attachments/assets/e51e581b-c8a2-41f5-8429-4716b7f6046b" />
 
-number2 
+number2 :
         
 ### Non variable Testing
 
