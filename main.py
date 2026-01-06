@@ -174,29 +174,6 @@ def calculate_population_stats(countries_data):
         "least_populous": min_pop
     }
 
-# compare to countries 
-def compare_countries(country1, country2):
-    """
-    Compares two countries based on their population.
-    
-    Parameters:
-    country1 (dict): The first country's data.
-    country2 (dict): The second country's data.
-    
-    Returns:
-    dict: A dictionary containing the names of both countries and their population ratio.
-    
-    """
-    
-    pop1 = country1.get("population", 0)
-    pop2 = country2.get("population", 1)
-
-    return {
-        "country1_name": country1.get("name"),
-        "country2_name": country2.get("name"),
-        "population_ratio": pop1 / pop2
-    }
-
 def main():
     """
     Main function to execute the program.
