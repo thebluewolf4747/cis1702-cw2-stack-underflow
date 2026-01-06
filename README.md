@@ -213,16 +213,30 @@ Finally, the data is saved to a text file for permanent storage.
 
 ### Variable Testing Table
 
-| Variable      | Testing Type     | Input    | Expected Result                                                                 | Actual Result | Improvement |
-|---------------|------------------|----------|---------------------------------------------------------------------------------|---------------|-------------|
-| country1_name | Normal Data      | "France" | No error: Program continues to run                                              | As expected   | N/A         |
-| Country1_name | Erroneous Data   | 2        | Error: Incorrect Data Type, caught by error handling                            | As expected   | N/A         |
-| Country1_name | Erroneous Data   | Texas    | Error: Correct Data Type, however not within Data set, caught by error handling | As expected   | N/A         |
-| country2_name | Normal Data      | "France" | No error: Program continues to run                                              | As expected   | N/A         |
-| country2_name | Normal Data      | 0        | No error: Program continues to run                                              | As expected   | N/A         |
-| Country2_name | Erroneous Data   | 72       | Error: No data entered, caught by error handling                                | As expected   | N/A         |
-| Country2_name | Erroneous Data   | Texas    | Error: Correct Data Type, however not within Data set, caught by error handling | As expected   | N/A         |
+| Variable / Function       | Testing Type     | Input              | Expected Result                                                | Actual Result | Improvement |
+| ------------------------- | ---------------- | ------------------ | -------------------------------------------------------------- | ------------- | ----------- |
+| country1_name             | Normal Data      | `"France"`         | No error; program continues to run                             | As expected   | N/A         | 
+| country1_name             | Erroneous Data   | `2`                | Error: Incorrect data type, caught by error handling           | As expected   | N/A         |
+| country1_name             | Erroneous Data   | `"Texas"`          | Error: Correct data type but not in dataset, handled correctly | As expected   | N/A         |
+| country2_name             | Normal Data      | `"France"`         | No error; program continues to run                             | As expected   | N/A         |
+| country2_name             | Boundary Data    | `0`                | No error; program continues to run                             | As expected   | N/A         |
+| country2_name             | Erroneous Data   | `72`               | Error: No valid data entered, caught by error handling         | As expected   | N/A         |
+| country2_name             | Erroneous Data   | `"Texas"`          | Error: Correct data type but not in dataset, handled correctly | As expected   | N/A         |
+| parse_data()              | Normal Data      | Valid country JSON | Country data parsed correctly                                  | As expected   | N/A         |
+| parse_data()              | Erroneous Data   | `None`             | Error handled, parsing stopped                                 | As expected   | N/A         |
+| save_country_to_file()    | Normal Data      | Parsed France data | Country saved to text file                                     | As expected   | N/A         |
+| save_country_to_file()    | Erroneous Data   | `None`             | No file write, error handled                                   | As expected   | N/A         |
+| save_multiple_countries() | Normal Data      | France + Germany   | Both countries saved to file                                   | As expected   | N/A         |
+| countries.txt             | Boundary Test    | Program run twice  | Data appended, not overwritten                                 | As expected   | N/A         |
+| Full Program Flow         | Integration Test | `"France"`         | API fetch → parse → save → report                              | As expected   | N/A         |
+| API_URL                   | Erroneous Data   | Invalid URL        | Connection error handled gracefully                            | As expected   | N/A         |
 
+### Screenshots 
+number1
+<img width="1430" height="68" alt="Screenshot 2026-01-06 at 20 19 34" src="https://github.com/user-attachments/assets/e51e581b-c8a2-41f5-8429-4716b7f6046b" />
+
+number2 :
+        
 ### Non variable Testing
 
 | Static Testing                                                                                           | Dynamic Testing                                                                                                                                                                              |
